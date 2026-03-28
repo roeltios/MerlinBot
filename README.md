@@ -1,2 +1,20 @@
 # MerlinBot
 Robot educativo de código libre
+
+# Licencia Merlin Bot
+
+Este proyecto está bajo la licencia **Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**.
+
+Usted es libre de:
+* **Compartir**: copiar y redistribuir el material en cualquier medio o formato.
+* **Adaptar**: remezclar, transformar y construir a partir del material.
+
+Bajo las siguientes condiciones:
+* **Atribución (BY)**: Debe otorgar el crédito correspondiente a **Roel / Merlin Bot**.
+* **No Comercial (NC)**: No puede utilizar el material con fines comerciales.
+* **Compartir Igual (SA)**: Si remezcla o transforma el material, debe distribuir sus contribuciones bajo la misma licencia que el original.
+
+Para ver una copia completa de esta licencia, visite:
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
