@@ -1,6 +1,6 @@
 # Merlin Bot Nivel 3: Navegación de Precisión e IoT
 
-El nivel final transforma al robot en un sistema avanzado de bucle cerrado y conectividad. Se enfoca en la precisión del movimiento y la integración con redes externas.
+Este nivel transforma al robot en un sistema avanzado de bucle cerrado y conectividad. Se enfoca en la precisión del movimiento y la integración con redes externas.
 
 ## Adiciones de Hardware
 * **Precisión:** Encóderes ópticos en los ejes de los motores.
