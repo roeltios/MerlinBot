@@ -1,49 +1,56 @@
-🔩 Merlin Bot: Especificaciones de Hardware (v1.0 Basic)
+# Merlin Bot: Hardware Básico (v1.0 MVP)
 
-Esta es la configuración mínima necesaria para tener un robot funcional, modular y de bajo costo.
-📦 Lista de Materiales (BOM)
-1. Electrónica Principal
+Este documento detalla los componentes necesarios para la construcción del Producto Mínimo Viable (MVP) de Merlin Bot. El diseño prioriza la modularidad, el bajo costo y la facilidad de reparación.
 
-    Microcontrolador: ESP32 DevKit V1 (30 pines). Elegido por su capacidad de conectarse a la Web App vía Web Serial y su potencia para futuros proyectos de IoT.
+---
 
-    Driver de Motores: Módulo L298N (Puente H). Permite controlar la velocidad (PWM) y dirección de dos motores de corriente continua.
+## Lista de Materiales (BOM)
 
-    Sensor de Distancia: HC-SR04 (Ultrasónico). Proporciona la capacidad de "ver" obstáculos mediante pulsos de sonido.
+| Categoría | Componente | Cantidad | Notas Técnicas |
+| :--- | :--- | :---: | :--- |
+| **Control** | ESP32 DevKit V1 (30 pines) | 1 | Microcontrolador principal con Wi-Fi/Bluetooth. |
+| **Potencia** | Driver de Motores L298N | 1 | Módulo de puente H para control de dos motores DC. |
+| **Sensor** | HC-SR04 (Ultrasonido) | 1 | Sensor de distancia para evasión de obstáculos. |
+| **Tracción** | Motorreductor Amarillo (1:48) | 2 | Incluye llantas de goma de 65mm. |
+| **Energía** | Baterías Li-ion 18650 | 2 | Celdas de 3.7V (Total 7.4V - 8.4V). |
+| **Soporte** | Portabaterías 18650 x2 | 1 | Con cables para conexión en serie. |
+| **Regulación** | Módulo LM2596 Step-Down | 1 | Convertidor DC-DC ajustable. |
+| **Base** | Chasis de Rejilla Universal | 1 | Perforaciones de 3mm con espaciado de 10mm. |
+| **Apoyo** | Rueda Loca (Caster Wheel) | 1 | Punto de apoyo frontal independiente. |
+| **Conexión** | Protoboard (400 puntos) | 1 | Para prototipado sin soldadura. |
 
-2. Sistema de Locomoción
+---
 
-    Motores: 2 x Motorreductores amarillos (1:48). Estándar en robótica educativa por su torque y facilidad de montaje.
+## Especificaciones de Ensamblaje
 
-    Ruedas: 2 x Ruedas de goma de 65mm.
+Para garantizar la estabilidad y el acceso educativo, se sugiere la siguiente distribución física:
 
-    Apoyo: 1 x Rueda loca (Caster wheel) metálica o plástica para el tercer punto de apoyo.
+### Distribución de Pesos (Planta Baja)
+* **Motores y Portabaterías:** Deben situarse en la base para mantener el centro de gravedad bajo.
+* **Rueda Loca:** Ubicada en el eje central delantero para permitir giros de 360 grados.
 
-3. Energía y Regulación
+### Interfaz de Control (Planta Alta)
+* **Protoboard:** Situada en la parte superior para facilitar el cambio de sensores y actuadores por parte de los alumnos.
+* **ESP32:** Montado sobre la protoboard para acceso directo a los pines de entrada y salida (GPIO).
 
-    Baterías: 2 x Li-ion 18650 (3.7V c/u). Proporcionan una autonomía superior a las pilas AA.
+---
 
-    Soporte: Portabaterías dual para 18650.
+## Configuración Eléctrica y Seguridad
 
-    Regulador de Voltaje: LM2596 (Step-Down). Configurado a 5V para alimentar el ESP32 y el sensor desde los 7.4V-8.4V de las baterías.
+### Advertencia de Voltaje
+Antes de conectar el ESP32, es mandatorio seguir este procedimiento:
+1. Conectar las baterías al regulador LM2596.
+2. Utilizar un multímetro en la salida del regulador.
+3. Ajustar el potenciómetro hasta obtener exactamente **5.0V**.
+4. Solo entonces, conectar la salida a los pines de alimentación del ESP32 (VIN y GND).
 
-4. Estructura y Conexión
+### Tierras Comunes
+Para que el sistema funcione correctamente, todos los terminales de tierra (GND) del ESP32, el Driver L298N, las baterías y el sensor deben estar interconectados en un solo punto común (bus de tierra de la protoboard).
 
-    Chasis: Placa de rejilla universal (MDF o Acrílico) con perforaciones de 3mm cada 10mm.
+---
 
-    Protoboard: 1 x Mini Protoboard (170 puntos) o 400 puntos, montada en la parte superior para prototipado rápido.
-
-    Cables: Jumpers tipo Dupont (Macho-Macho y Macho-Hembra).
-
-📐 Guía de Montaje Sugerida
-
-Para mantener el centro de gravedad bajo y facilitar el aprendizaje en CreaEduu, se recomienda la siguiente distribución:
-
-    Nivel Inferior: Motores y portabaterías (atrás), Rueda loca (adelante).
-
-    Nivel Superior: Protoboard al centro, Driver L298N en la parte posterior y ESP32 en la protoboard.
-
-    Frente: Sensor ultrasónico montado con un soporte simple orientado hacia adelante.
-
-⚡ Requerimiento de Seguridad Previo
-
-    IMPORTANTE: Antes de realizar cualquier conexión al ESP32, se debe girar el potenciómetro del regulador LM2596 mientras se mide con un multímetro hasta que la salida marque 5.0V.
+## Capacidades del Hardware v1.0
+* Movimiento diferencial (adelante, atrás, giros).
+* Medición de distancia en tiempo real (rango de 2cm a 400cm).
+* Programación mediante Web Serial (MicroBlocks/Arduino Cloud).
+* Autonomía aproximada de 2 a 3 horas de uso continuo.
