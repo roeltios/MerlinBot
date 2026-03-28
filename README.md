@@ -6,7 +6,7 @@ Robot educativo de código libre
 # Estado: Prototipo Funcional
 De momento, la mayoría de la redacción en los archivos están hechos con IA (Gemini). Conforme se vaya desarrollando el proyecto, espero ir editando y redactando toda la documentación.
 
-## Hoja de Ruta (Roadmap)
+## Roadmap
 
 El desarrollo de Merlin Bot se divide en tres fases principales para asegurar una transición exitosa desde los robots Finch actuales.
 
